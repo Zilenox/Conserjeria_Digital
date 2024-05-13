@@ -1,5 +1,7 @@
 ﻿# Conserjeria_Digital
+Mockup:
 
+https://www.figma.com/proto/uVGl9OITHSvW5qhHennFXj/Conserjeria-Digital?type=design&node-id=1-696&t=D3PuWvGalArBcqLx-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A107&mode=design
 
 PATH: 
 
