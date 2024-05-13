@@ -1,0 +1,7 @@
+{
+  "name": "Conserjeria_Digital",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

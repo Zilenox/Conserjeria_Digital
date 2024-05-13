@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <div class="ion-text-center">Conserjeria Virtual</div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br><br><br><br>
+  <ion-card>
+    <form [formGroup] = "formularioLoginConserje">
+      <ion-card-header>
+        <ion-card-title>
+          <div class="ion-text-center">Ingreso Conserjes</div>
+        </ion-card-title>
+        <ion-card-subtitle>
+          <div class="ion-text-center">Ingrese su usuario y contraseña</div>
+        </ion-card-subtitle>
+      </ion-card-header>  
+      <ion-card-content>
+        <ion-item> 
+          <ion-input placeholder="Nombre" formControlName="Nombre"></ion-input>
+        </ion-item> 
+        <ion-item> 
+          <ion-input placeholder="Contraseña" formControlName="password"></ion-input>
+        </ion-item> 
+      </ion-card-content>
+    
+    </form>
+    <div class="ion-text-center">
+      <ion-button (click) = "ingresarConserje()" expand="block" color="dark">ENTRAR</ion-button>
+    </div>
+  </ion-card>
+  <ion-card-subtitle>
+    <div class="ion-text-center">------ o ingreso alternativo ------</div>
+  </ion-card-subtitle>
+  <ion-card >
+    <br>
+    <div class="ion-text-center">
+      <ion-button (click) = "cambiarResidente()"  color="light">Residentes</ion-button>
+    </div>
+    <div class="ion-text-center">
+      <ion-button (click) = "cambiarADMIN()" color="light">Administrativo</ion-button>
+    </div>
+    <br>
+  </ion-card>  
+  
+</ion-content>
