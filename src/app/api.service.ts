@@ -38,4 +38,17 @@ export class ApiService {
     return this.http.post("https://localhost:8081/api/Residente", body);
   }
 
+  getCorrespondencia(){
+    return this.http.get('https://localhost:8081/api/Correspondencia')
+  }
+  postNuevaEncomienda(body:any){
+    const header =new HttpHeaders({
+      contentType:'application/json'
+    })
+    return this.http.post("https://localhost:8081/api/Correspondencia", body);
+  }
+  EliminarEncomienda(id:any){
+    return this.http.delete("https://localhost:8081/api/Correspondencia/"+id);
+  }
+
 }
