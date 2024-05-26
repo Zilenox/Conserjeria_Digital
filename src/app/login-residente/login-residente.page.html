@@ -20,10 +20,10 @@
       </ion-card-header>  
       <ion-card-content>
         <ion-item> 
-          <ion-input placeholder="Nombre" formControlName="Nombre"></ion-input>
+          <ion-input placeholder="Usuario"></ion-input>
         </ion-item> 
         <ion-item> 
-          <ion-input placeholder="Contraseña" formControlName="password"></ion-input>
+          <ion-input type="password" placeholder="Contraseña"></ion-input>
         </ion-item> 
       </ion-card-content>
     
@@ -38,10 +38,10 @@
   <ion-card >
     <br>
     <div class="ion-text-center">
-      <ion-button (click) = "cambiarConserje()"  color="light">Conserjes</ion-button>
+      <ion-button href= "./login-conserje"  color="light">Conserjes</ion-button>
     </div>
     <div class="ion-text-center">
-      <ion-button (click) = "cambiarADMIN()" color="light">Administrativo</ion-button>
+      <ion-button href = "./login-administrador" color="light">Administrativo</ion-button>
     </div>
     <br>
   </ion-card>  
