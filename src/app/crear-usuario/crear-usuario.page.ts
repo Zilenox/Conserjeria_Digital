@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';  
 import{
   FormGroup,
   FormControl,
@@ -14,17 +15,52 @@ import{
 
 export class CrearUsuarioPage implements OnInit {
 
-  formularioNuevoUsuario: FormGroup;
-  constructor(public fb: FormBuilder) {
-    this.formularioNuevoUsuario = this.fb.group(
+  public RUT:any;
+  public type:any;
+  public name:any;
+  public depto:any;
+
+  constructor(public api:ApiService) {}
+
+  
+  CrearConserje(){
+    let body = {
+      "id": 0,
+      "rut": this.RUT,
+      "nombre": this.name
+    }
+    this.api.postNuevoConserje(body).subscribe(result=>{
+      console.log(result);
+    });
+  }
+
+  CrearResidente(){
+    let body = {
+      "id": 0,
+      "rut": this.RUT,
+      "nombre": this.name,
+      "numeroDepto": this.depto,
+      "casilla": 0
+    }
+    this.api.postNuevoResidente(body).subscribe(result=>{
+      console.log(result);
+    });
+  } 
+
+  CrearUsuario(){
+    if(this.type == 'Conserje')
       {
-        'name':new FormControl("",Validators.required),
-        'type':new FormControl("",Validators.required),
-        'depto':new FormControl("")
+        this.CrearConserje();
       }
-    )
-   }
-  CrearUsuario(){}
+    else if(this.type == 'Residente')
+      {
+        this.CrearResidente();
+      }
+    else{
+      console.log("el tipo ingresado no es valido")
+    }
+  }
+
   ngOnInit() {
   }
 

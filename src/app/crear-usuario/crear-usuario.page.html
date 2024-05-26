@@ -13,19 +13,22 @@
   </ion-grid>
 
   <ion-card class="ion-margin">
-    <form [formGroup] = "formularioNuevoUsuario">
+    <!--form [formGroup] = "formularioNuevoUsuario"-->
       <ion-card-content>
         <ion-item> 
-          <ion-input placeholder="Nombre" formControlName="name"></ion-input>
+          <ion-input placeholder="Nombre" [(ngModel)]="name"></ion-input>
         </ion-item> 
         <ion-item> 
-          <ion-input placeholder="Tipo" formControlName="type"></ion-input>
+          <ion-input placeholder="RUT" [(ngModel)]="RUT"></ion-input>
         </ion-item> 
         <ion-item> 
-          <ion-input placeholder="depto (si aplica)" formControlName="depto"></ion-input>
+          <ion-input placeholder="Conserje o Residente" [(ngModel)]="type"></ion-input>
+        </ion-item> 
+        <ion-item> 
+          <ion-input placeholder="depto (si aplica)" [(ngModel)]="depto"></ion-input>
         </ion-item> 
       </ion-card-content>
-    </form>
+    <!--/form-->
   </ion-card>  
   <div class="ion-text-center">
     <ion-button (click) = "CrearUsuario()"  color="dark">Agregar</ion-button>

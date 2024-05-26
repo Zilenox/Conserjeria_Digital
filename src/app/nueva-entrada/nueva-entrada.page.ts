@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';  
 import{
   FormGroup,
   FormControl,
@@ -13,15 +14,15 @@ import{
 })
 
 export class NuevaEntradaPage implements OnInit {
-  formularioNuevaEntrada: FormGroup;
-  constructor(public fb: FormBuilder) { 
-    this.formularioNuevaEntrada = this.fb.group(
-      {
-        'NewEntry':new FormControl("",Validators.required)
-      }
-    )
+  
+  public data:any;
+  constructor(public api:ApiService) { }
+
+  NuevaEntrada(){
+    this.api.postPublicacion(this.data).subscribe(result=>{
+      console.log(result);
+    });
   }
-  NuevaEntrada(){}
   ngOnInit() {
   }
 

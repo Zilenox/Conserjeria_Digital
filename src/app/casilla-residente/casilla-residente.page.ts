@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';  
+import { InfiniteScrollCustomEvent } from '@ionic/angular';
 import{
   FormGroup,
   FormControl,
@@ -12,9 +14,20 @@ import{
 })
 export class CasillaResidentePage implements OnInit {
 
-  constructor() { }
+  public Pizarra:any;
+  constructor(public api:ApiService) { }
 
   ngOnInit() {
+    this.FillPizarra();
   }
+
+  FillPizarra(){
+    this.api.getPublicaciones().subscribe(result=>{
+      this.Pizarra=result;
+      console.log(result);
+    });
+  }
+
+
 
 }

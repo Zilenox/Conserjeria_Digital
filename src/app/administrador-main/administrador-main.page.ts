@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';  
 import{
   FormGroup,
   FormControl,
@@ -13,10 +14,13 @@ import{
 export class AdministradorMainPage implements OnInit {
 
 
-  constructor() { 
+  constructor(public api:ApiService) { 
   }
+
   AgregarEntrada(){}
+
   AgregarUsuario(){}
+  
   ngOnInit() {
   }
 

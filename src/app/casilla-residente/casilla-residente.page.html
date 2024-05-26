@@ -56,29 +56,24 @@
       <ion-col size="10">
 
         <!-- solo demostracion, cambiar por infinite scroll cuando agreguemos funcionalidad-->
-      <ion-card color="light">
+      <!--<ion-card color="light">
         <ion-card-header>
           <ion-card-subtitle>Administracion</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content> Corte programado de agua potable el dia 15 de mayo de 8:00 a 18:00 hrs </ion-card-content>
       </ion-card>
+    -->
+    
 
-      <!--infinite scroll placeholder > ejemplo
-
+      <ion-card>
         <ion-list>
-          <ion-item *ngFor="let item of items; let index">
-            <ion-avatar slot="start">
-              <img [src]="'https://picsum.photos/80/80?random=' + index" alt="avatar" />
-            </ion-avatar>
-            <ion-label>{{ item }}</ion-label>
+          <ion-item *ngFor="let item of Pizarra">
+            <ion-label>{{ item.note }}</ion-label>
           </ion-item>
         </ion-list>
+      </ion-card>
 
-        <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
-          <ion-infinite-scroll-content></ion-infinite-scroll-content>
-        </ion-infinite-scroll>
 
-        -->
       </ion-col>
     <ion-col size="1"></ion-col>
     </ion-row>
