@@ -34,12 +34,13 @@
       <ion-col size="10">
 
         <!-- solo demostracion, cambiar por infinite scroll cuando agreguemos funcionalidad-->
-      <ion-card color="light">
-        <ion-card-header>
-          <ion-card-subtitle>Administracion</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content> Corte programado de agua potable el dia 15 de mayo de 8:00 a 18:00 hrs </ion-card-content>
-      </ion-card>
+        <ion-card>
+          <ion-list>
+            <ion-item *ngFor="let item of Pizarra">
+              <ion-label>{{ item.note }}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card>
 
       <!--infinite scroll placeholder > ejemplo
 

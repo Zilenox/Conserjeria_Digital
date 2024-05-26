@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';  
+
 import{
   FormGroup,
   FormControl,
@@ -12,12 +14,23 @@ import{
 })
 export class AdministradorMainPage implements OnInit {
 
-
-  constructor() { 
+ public Pizarra:any;
+  constructor(public api:ApiService) { 
   }
+
   AgregarEntrada(){}
+
   AgregarUsuario(){}
+  
   ngOnInit() {
+    this.FillPizarra();
+  }
+
+  FillPizarra(){
+    this.api.getPublicaciones().subscribe(result=>{
+      this.Pizarra=result;
+      console.log(result);
+    });
   }
 
 }
