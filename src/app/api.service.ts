@@ -28,7 +28,7 @@ export class ApiService {
     const header =new HttpHeaders({
       contentType:'application/json'
     })
-    return this.http.post("https://localhost:8081/api/User", body);
+    return this.http.post("https://localhost:8081/api/Conserje", body);
   }
 
   postNuevoResidente(body:any){
