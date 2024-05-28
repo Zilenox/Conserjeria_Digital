@@ -9,7 +9,10 @@
 <ion-content [fullscreen]="true">
   <br><br>
   <ion-card-title>
-    <div class="ion-text-center">DEPTO 705</div>
+    <div *ngIf="Residente != null; then _sigue else _default"></div>
+        <ng-template #_sigue><div class="ion-text-center">DEPTO {{Residente.numeroDepto}}</div></ng-template>
+        <ng-template #_default>DEPTO --</ng-template>
+    
   </ion-card-title>
 
   <ion-grid>
@@ -23,22 +26,29 @@
     </ion-row>
     <ion-row>
       <ion-col size="1"></ion-col>
-      <ion-col>
+      <ion-col size="10">
         <ion-card color="medium">
           <ion-card-header>
-            <ion-card-title>0</ion-card-title>
+            <div *ngIf="Residente != null; then _sigue else _default"></div>
+              <ng-template #_sigue>
+                <ion-card-title>{{Residente.casilla}}</ion-card-title>
+              </ng-template>
+              <ng-template #_default>
+                <ion-card-title>0</ion-card-title>
+              </ng-template>
+            
             <ion-card-subtitle>Cartas</ion-card-subtitle>
           </ion-card-header>
         </ion-card>
       </ion-col>
-      <ion-col>
+      <!--ion-col>
         <ion-card color="medium">
           <ion-card-header>
             <ion-card-title>1</ion-card-title>
             <ion-card-subtitle>Encomienda</ion-card-subtitle>
           </ion-card-header>
         </ion-card>
-      </ion-col>
+      </ion-col-->
       <ion-col size="1"></ion-col>
     </ion-row>
     
@@ -55,30 +65,17 @@
       <ion-col size="1"></ion-col>
       <ion-col size="10">
 
-        <!-- solo demostracion, cambiar por infinite scroll cuando agreguemos funcionalidad-->
-      <ion-card color="light">
-        <ion-card-header>
-          <ion-card-subtitle>Administracion</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content> Corte programado de agua potable el dia 15 de mayo de 8:00 a 18:00 hrs </ion-card-content>
-      </ion-card>
+    
 
-      <!--infinite scroll placeholder > ejemplo
-
+      <ion-card>
         <ion-list>
-          <ion-item *ngFor="let item of items; let index">
-            <ion-avatar slot="start">
-              <img [src]="'https://picsum.photos/80/80?random=' + index" alt="avatar" />
-            </ion-avatar>
-            <ion-label>{{ item }}</ion-label>
+          <ion-item *ngFor="let item of Pizarra">
+            <ion-label>{{ item.note }}</ion-label>
           </ion-item>
         </ion-list>
+      </ion-card>
 
-        <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
-          <ion-infinite-scroll-content></ion-infinite-scroll-content>
-        </ion-infinite-scroll>
 
-        -->
       </ion-col>
     <ion-col size="1"></ion-col>
     </ion-row>
@@ -94,7 +91,7 @@
     <ion-row >
       <ion-col size="1"></ion-col>
       <ion-col size="3">
-        <ion-button color = "dark" href="./login-residente">SALIR</ion-button>
+        <ion-button color = "dark" (click) = salirAlLogin()>SALIR</ion-button>
       </ion-col>
       <ion-col size="4"></ion-col>
       <ion-col size="3">

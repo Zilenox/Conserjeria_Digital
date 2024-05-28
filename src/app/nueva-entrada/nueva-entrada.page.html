@@ -13,13 +13,13 @@
   </ion-grid>
 
   <ion-card class="ion-margin">
-    <form [formGroup] = "formularioNuevaEntrada">
+    <!--form [formGroup] = "formularioNuevaEntrada"-->
       <ion-card-content>
         <ion-item> 
-          <ion-input placeholder="Nueva entrada" formControlName="NewEntry"></ion-input>
+          <ion-input placeholder="Nueva entrada" [(ngModel)]="data"></ion-input>
         </ion-item> 
       </ion-card-content>
-    </form>
+    <!--/form-->
   </ion-card>  
   <div class="ion-text-center">
     <ion-button (click) = "NuevaEntrada()"  color="dark">CREAR</ion-button>

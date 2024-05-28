@@ -9,25 +9,25 @@
 <ion-content>
   <br><br><br><br>
   <ion-card>
-    <form [formGroup] = "formularioLoginResident">
+
       <ion-card-header>
         <ion-card-title>
           <div class="ion-text-center">Ingreso Residentes</div>
         </ion-card-title>
         <ion-card-subtitle>
-          <div class="ion-text-center">Ingrese su usuario y contraseña</div>
+          <div class="ion-text-center">Ingrese su RUT y contraseña</div>
         </ion-card-subtitle>
       </ion-card-header>  
       <ion-card-content>
         <ion-item> 
-          <ion-input placeholder="Usuario"></ion-input>
+          <ion-input placeholder="RUT" [(ngModel)]="rut"></ion-input>
         </ion-item> 
         <ion-item> 
-          <ion-input type="password" placeholder="Contraseña"></ion-input>
+          <ion-input type="password" placeholder="Contraseña" [(ngModel)]="pass"></ion-input>
         </ion-item> 
       </ion-card-content>
     
-    </form>
+   
     <div class="ion-text-center">
       <ion-button (click) = "ingresar()" expand="block" color="dark">ENTRAR</ion-button>
     </div>

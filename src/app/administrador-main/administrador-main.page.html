@@ -16,11 +16,9 @@
 
     <br>
     <div class="ion-text-center">
-      <ion-button (click) = "AgregarUsuario()"  color="dark">Agregar Usuario</ion-button>
+      <ion-button (click) = "NavAgregarUsuario()" color="dark">Agregar Usuario</ion-button>
     </div>
 
-    
-    
     <ion-row>
       <ion-col size="1"></ion-col>
       <ion-col size="10">
@@ -33,37 +31,21 @@
       <ion-col size="1"></ion-col>
       <ion-col size="10">
 
-        <!-- solo demostracion, cambiar por infinite scroll cuando agreguemos funcionalidad-->
-      <ion-card color="light">
-        <ion-card-header>
-          <ion-card-subtitle>Administracion</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content> Corte programado de agua potable el dia 15 de mayo de 8:00 a 18:00 hrs </ion-card-content>
-      </ion-card>
+        <ion-card>
+          <ion-list>
+            <ion-item *ngFor="let item of Pizarra">
+              <ion-label>{{ item.note }}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card>
 
-      <!--infinite scroll placeholder > ejemplo
-
-        <ion-list>
-          <ion-item *ngFor="let item of items; let index">
-            <ion-avatar slot="start">
-              <img [src]="'https://picsum.photos/80/80?random=' + index" alt="avatar" />
-            </ion-avatar>
-            <ion-label>{{ item }}</ion-label>
-          </ion-item>
-        </ion-list>
-
-        <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
-          <ion-infinite-scroll-content></ion-infinite-scroll-content>
-        </ion-infinite-scroll>
-
-        -->
       </ion-col>
     <ion-col size="1"></ion-col>
     </ion-row>
 
   </ion-grid>
   <div class="ion-text-center">
-    <ion-button (click) = "AgregarEntrada()"  color="dark">Agregar entrada</ion-button>
+    <ion-button href="./crear-usuario"  color="dark">Agregar entrada</ion-button>
   </div>
   <ion-card>
   </ion-card>    
@@ -74,7 +56,7 @@
     <ion-row >
       <ion-col size="1"></ion-col>
       <ion-col size="3">
-        <ion-button color = "dark" href="./login-adminitrador">SALIR</ion-button>
+        <ion-button color = "dark" (click) = salirAlLogin()>SALIR</ion-button>
       </ion-col>
       <ion-col size="4"></ion-col>
       <ion-col size="3">

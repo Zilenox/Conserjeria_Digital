@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';  
+import { Router } from '@angular/router'; 
+import { HttpStatusCode } from '@angular/common/http';
 import{
   FormGroup,
   FormControl,
@@ -14,19 +17,29 @@ import{
 
 export class LoginAdministradorPage implements OnInit {
 
-  formularioLoginAdmin: FormGroup;
+  public rut:any;
+  public pass:any;
 
-  constructor(public fb: FormBuilder) { 
+  constructor(public api:ApiService,public router:Router) {   }
 
-    this.formularioLoginAdmin = this.fb.group(
-      {
-        'nombre':new FormControl("",Validators.required),
-        'password':new FormControl("",Validators.required)
-      }
-    )
 
-  }
-  ingresarAdministrador(){}
+  ingresarAdministrador(){
+    let body = {
+      "rut": this.rut,
+      "pass": this.pass
+    }
+    
+    this.api.LoginAdmin(body).subscribe((res) => {
+
+       if (res.status == HttpStatusCode.Ok) {
+          this.router.navigate(['./administrador-main']);
+        } else {
+          console.log(res);
+        }
+  });
+}
+  
+
   cambiarResidente(){}
   cambiarConserje(){}
   ngOnInit() {

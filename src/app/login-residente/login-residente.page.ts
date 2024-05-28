@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';  
+import { Router } from '@angular/router';  
 import{
   FormGroup,
   FormControl,
   Validators,
   FormBuilder
 } from '@angular/forms'
+import { HttpStatusCode } from '@angular/common/http';
 
 @Component({
   selector: 'app-login-residente',
@@ -13,17 +16,30 @@ import{
 })
 export class LoginResidentePage implements OnInit {
 
-  formularioLoginResident: FormGroup;
-  constructor(public fb: FormBuilder) { 
-    this.formularioLoginResident = this.fb.group(
-      {
-        'nombre':new FormControl("",Validators.required),
-        'password':new FormControl("",Validators.required)
+  public rut:any;
+  public pass:any;
+
+  //public api:ApiService
+  constructor(public api:ApiService,public router:Router) { }
+  
+
+  ingresar(){
+      let body = {
+        "rut": this.rut,
+        "pass": this.pass
       }
-    )
+      
+      this.api.LoginResidente(body).subscribe((res) => {
+
+         if (res.status == HttpStatusCode.Ok) {
+            this.router.navigate(['./casilla-residente'],{ queryParams: { id:this.rut }});
+          } else {
+            console.log(res);
+          }
+    });
   }
 
-  ingresar(){}  //placeholder funcion ingresar
+  
   cambiarConserje(){}
   cambiarADMIN(){}  //placeholder funcion cambio a login admin
   ngOnInit() {
