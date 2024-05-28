@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';  
+import { Router } from '@angular/router'; 
 import{
   FormGroup,
   FormControl,
@@ -15,7 +16,7 @@ export class ConserjeMainPage implements OnInit {
   public Correspondencias:any;
   public NumDepa:any;
   public Tipo:any;
-  constructor(public api:ApiService) { }
+  constructor(public api:ApiService,public router:Router) { }
 
   ngOnInit() {
     this.FillCorrespondencia();
@@ -28,7 +29,9 @@ export class ConserjeMainPage implements OnInit {
     });
   }
 
-
+  Refrescar(){
+    this.router.navigate(['./conserje-main']);
+  }
   AgregarEncomienda(){
     let body = {
       "id": 0,
@@ -46,4 +49,11 @@ export class ConserjeMainPage implements OnInit {
     });
   }
 
+  salirAlLogin(){
+    this.router.navigate(['./login-conserje']);
+  }
+
+  IrAPerfil(){
+
+  }
 }

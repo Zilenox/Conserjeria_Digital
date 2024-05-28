@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';  
+import { Router } from '@angular/router'; 
 import{
   FormGroup,
   FormControl,
@@ -20,7 +21,7 @@ export class CrearUsuarioPage implements OnInit {
   public name:any;
   public depto:any;
 
-  constructor(public api:ApiService) {}
+  constructor(public api:ApiService,public router:Router) {}
 
   
   CrearConserje(){
@@ -61,6 +62,10 @@ export class CrearUsuarioPage implements OnInit {
     }
   }
 
+  volver(){
+    this.router.navigate(['./administrador-main']);
+  }
+  
   ngOnInit() {
   }
 

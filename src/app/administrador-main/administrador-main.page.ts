@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';  
+import { Router } from '@angular/router'; 
 
 import{
   FormGroup,
@@ -15,12 +16,14 @@ import{
 export class AdministradorMainPage implements OnInit {
 
  public Pizarra:any;
-  constructor(public api:ApiService) { 
+  constructor(public api:ApiService,public router:Router) { 
   }
 
   AgregarEntrada(){}
 
-  AgregarUsuario(){}
+  NavAgregarUsuario(){
+    this.router.navigate(['./crear-usuario']);
+  }
   
   ngOnInit() {
     this.FillPizarra();
@@ -31,6 +34,14 @@ export class AdministradorMainPage implements OnInit {
       this.Pizarra=result;
       console.log(result);
     });
+  }
+
+  salirAlLogin(){
+    this.router.navigate(['./login-administrador']);
+  }
+
+  IrAPerfil(){
+    
   }
 
 }

@@ -50,5 +50,19 @@ export class ApiService {
   EliminarEncomienda(id:any){
     return this.http.delete("https://localhost:8081/api/Correspondencia/"+id);
   }
-
+  LoginResidente(body:any){
+    return this.http.post("https://localhost:8081/api/Trash", body,{ observe: 'response', responseType: 'text' });
+  }
+  LoginConserje(body:any){
+    return this.http.post("https://localhost:8081/api/Trash", body,{ observe: 'response', responseType: 'text' });
+  }
+  LoginAdmin(body:any){
+    return this.http.post("https://localhost:8081/api/Trash", body,{ observe: 'response', responseType: 'text' });
+  }
+  GetResidentes(){
+    return this.http.get('https://localhost:8081/api/Residente')
+  }
+  GetResidenteEspecifico(RUT:any){
+    return this.http.get('https://localhost:8081/api/Residente/'+RUT)
+  }
 }
