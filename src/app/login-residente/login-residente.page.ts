@@ -39,9 +39,13 @@ export class LoginResidentePage implements OnInit {
     });
   }
 
-  
-  cambiarConserje(){}
-  cambiarADMIN(){}  //placeholder funcion cambio a login admin
+  ToLoginConserje(){
+    this.router.navigate(['login-conserje']);
+  }
+  ToLoginAdmin(){
+    this.router.navigate(['login-administrador']);
+  }
+
   ngOnInit() {
   }
 

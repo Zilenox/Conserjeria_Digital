@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';  
 import { Router } from '@angular/router'; 
+import { Platform, AlertController } from '@ionic/angular';
 import{
   FormGroup,
   FormControl,
   Validators,
   FormBuilder
 } from '@angular/forms'
+
 @Component({
   selector: 'app-conserje-main',
   templateUrl: './conserje-main.page.html',
@@ -16,7 +18,11 @@ export class ConserjeMainPage implements OnInit {
   public Correspondencias:any;
   public NumDepa:any;
   public Tipo:any;
-  constructor(public api:ApiService,public router:Router) { }
+  constructor(
+    public api:ApiService,
+    public router:Router,
+    private alertcontroller:AlertController
+  ) { }
 
   ngOnInit() {
     this.FillCorrespondencia();
@@ -32,6 +38,7 @@ export class ConserjeMainPage implements OnInit {
   Refrescar(){
     this.router.navigate(['./conserje-main']);
   }
+
   AgregarEncomienda(){
     let body = {
       "id": 0,
@@ -40,18 +47,37 @@ export class ConserjeMainPage implements OnInit {
     }
     this.api.postNuevaEncomienda(body).subscribe(result=>{
       console.log(result);
+      this.encomiendaGuardada();
     });
   } 
+
+  async encomiendaEliminada(){
+    const alert = await this.alertcontroller.create({
+      message: 'encomienda eliminada'
+    });
+    await alert.present();
+    //this.Refrescar();
+  }
+
+  async encomiendaGuardada(){
+    const alert = await this.alertcontroller.create({
+      message: 'encomienda guardada'
+    });
+    await alert.present();
+  }
 
   EliminarEncomienda(id:any){
     this.api.EliminarEncomienda(id).subscribe(result=>{
       console.log(result);
     });
+    this.encomiendaEliminada();
   }
 
   salirAlLogin(){
-    this.router.navigate(['./login-conserje']);
+    this.router.navigate(['login-conserje']);
   }
+
+ 
 
   IrAPerfil(){
 

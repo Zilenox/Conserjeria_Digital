@@ -47,7 +47,7 @@ export class CasillaResidentePage implements OnInit {
     });
   }
   salirAlLogin(){
-    this.router.navigate(['./login-Residente']);
+    this.router.navigate(['login-residente']);
   }
 
   IrAPerfil(){

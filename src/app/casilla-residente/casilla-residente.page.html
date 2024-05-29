@@ -25,19 +25,19 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="1"></ion-col>
-      <ion-col size="10">
+      <ion-col size="3"></ion-col>
+      <ion-col size="6">
         <ion-card color="medium">
           <ion-card-header>
-            <div *ngIf="Residente != null; then _sigue else _default"></div>
-              <ng-template #_sigue>
-                <ion-card-title>{{Residente.casilla}}</ion-card-title>
-              </ng-template>
-              <ng-template #_default>
-                <ion-card-title>0</ion-card-title>
-              </ng-template>
-            
-            <ion-card-subtitle>Cartas</ion-card-subtitle>
+            <div *ngIf="Residente != null; then _siguebis else _defaultbis"></div>
+            <ng-template #_siguebis><div class="ion-text-center">DEPTO {{Residente.numeroDepto}}</div></ng-template>
+            <ng-template #_defaultbis>DEPTO --</ng-template>
+            <div class="ion-text-center">
+              <div *ngIf="Residente != null; then _siguetris else _defaulttris"></div>
+              <ng-template #_siguetris><ion-card-subtitle>Cartas {{Residente.casilla}}</ion-card-subtitle></ng-template>
+              <ng-template #_defaulttris><ion-card-subtitle>Cartas 0</ion-card-subtitle></ng-template>
+            </div>
+            <!--ion-card-subtitle>Cartas</ion-card-subtitle-->
           </ion-card-header>
         </ion-card>
       </ion-col>
@@ -49,7 +49,7 @@
           </ion-card-header>
         </ion-card>
       </ion-col-->
-      <ion-col size="1"></ion-col>
+      <ion-col size="3"></ion-col>
     </ion-row>
     
     

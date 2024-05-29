@@ -15,10 +15,19 @@
   <ion-grid>
 
     <br>
-    <div class="ion-text-center">
+    <!--div class="ion-text-center">
       <ion-button (click) = "NavAgregarUsuario()" color="dark">Agregar Usuario</ion-button>
+    </div-->
+    <div class="ion-text-center">
+      <ion-button id="present-alert" color="dark" (click) = "PromtAgregarUser()">Agregar Usuario</ion-button>
+      <!--ion-alert
+        trigger="present-alert"
+        header="Ingresar nuevo usuario"
+        [buttons]="alertButtons"
+        [inputs]="alertInputs"
+        (didDismiss)="setResult($event)"
+      ></ion-alert-->
     </div>
-
     <ion-row>
       <ion-col size="1"></ion-col>
       <ion-col size="10">
@@ -44,8 +53,9 @@
     </ion-row>
 
   </ion-grid>
+  
   <div class="ion-text-center">
-    <ion-button href="./crear-usuario"  color="dark">Agregar entrada</ion-button>
+    <ion-button (click) = "PromtAgregarEntrada()"  color="dark">Agregar entrada</ion-button>
   </div>
   <ion-card>
   </ion-card>    
