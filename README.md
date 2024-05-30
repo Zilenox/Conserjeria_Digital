@@ -1,5 +1,5 @@
 ﻿# Conserjeria_Digital
-Mockup:
+## Mockup:
 
 https://www.figma.com/proto/uVGl9OITHSvW5qhHennFXj/Conserjeria-Digital?type=design&node-id=1-696&t=D3PuWvGalArBcqLx-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A107&mode=design
 
@@ -8,22 +8,25 @@ https://www.figma.com/proto/uVGl9OITHSvW5qhHennFXj/Conserjeria-Digital?type=desi
 
 
 
-Dependencias: 
+## Dependencias: 
 
-La api esta en el repositorio 
+
+
+### Api - esta en el repositorio 
 https://github.com/Zilenox/ApiConserjeriaDigital.git
 
 para poder ejecutar el sistema completo se requiere instalar:
 
-Visual Studio 
+### Visual Studio 
 link version comunity:
 https://visualstudio.microsoft.com/es/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false
 
-Docker Desktop
+### Docker Desktop
 https://www.docker.com/products/docker-desktop/
 
 se recomienda reiniciar el equipo posterior a la instalacion de ambos.
 
+## Levantar la api
 para levantar la Api, iniciar Visual estudio y clonar el repositorio de la api:
 https://github.com/Zilenox/ApiConserjeriaDigital.git
 
@@ -34,7 +37,7 @@ tambien puede acceder manualmente desde la direccion:
 https://localhost:8081/swagger/index.html
 
 
-
+## aplicacion mobile
 En cuanto a la aplicacion, puede clonar el sistema directamente desde Visual Studio Code 
 -ejecutar con :
 ionic serve 
