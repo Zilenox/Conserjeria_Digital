@@ -77,13 +77,15 @@ Administrador:
 - puede crear nuevos usuarios y publicaciones desde el perfil "administrador"
 - puede tener acceso a su casilla y ver las encomiendas disponibles desde el perfil "residente"
 
-  ### Video
-  https://drive.google.com/file/d/1l2s5nHV9E3g9zGrM8orjNt4PyvCXVduR/view?usp=sharing
+ 
   
 
--Condiciones:
-los paquetes deben ser del tipo "Carta" o "Encomienda" - Se va a modificar por un combobox para comodidad
-los paquetes deben ser dirigidos a usuarios existentes (numero de depto existe)
-al crear un nuevo usuario, la clave por defecto es "password"
+### Condiciones:
+- los paquetes deben ser del tipo "Carta" o "Encomienda" 
+- Se va a modificar por un combobox para comodidad
+- los paquetes deben ser dirigidos a usuarios existentes (numero de depto existe)
+- al crear un nuevo usuario, la clave por defecto es el numero de departamento
 
 
+ ## Video
+  https://drive.google.com/file/d/1l2s5nHV9E3g9zGrM8orjNt4PyvCXVduR/view?usp=sharing
