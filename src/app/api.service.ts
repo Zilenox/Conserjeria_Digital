@@ -65,4 +65,15 @@ export class ApiService {
   GetResidenteEspecifico(RUT:any){
     return this.http.get('https://localhost:8081/api/Residente/'+RUT)
   }
+
+  GetUserEspecifico(RUT:any){
+    return this.http.get('https://localhost:8081/api/User/'+RUT)
+  }
+  PutPassword(body:any, id:any){
+    const header =new HttpHeaders({
+      contentType:'application/json'
+    })
+    return this.http.put('https://localhost:8081/api/Trash/'+id,body)
+  }
+
 }
